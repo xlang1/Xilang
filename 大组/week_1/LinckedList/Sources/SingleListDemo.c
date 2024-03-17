@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿/*#define _CRT_SECURE_NO_WARNINGS
 #include "SingleListDemo.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,7 +21,6 @@ void displayMenu(int n)//目录显示
 			printf("%s\n", insertMenu[i]);
 		}
 	}
-
 }
 
 void printData(LinckedList head)//遍历链表
@@ -259,62 +258,62 @@ void paritySwap(LinckedList head) //奇偶对换
 
 	printf("奇偶反转成功！（回车返回）");
 	getchar();
-}
+}*/
 
-int main() {
-	LinckedList head = NULL;
-	int command1;//1.控制链表指令；2.控制插入指令
-	for (;;) {
-		system("cls");
-		displayMenu(13);
-		printf("请输入指令（1-11）：\n");
-		scanf("%d", &command1);
-		getchar();
-		switch (command1) {
-		case 1:
-			if (head == NULL)head = createEmptyList();//创建空链表
-			else {
-				printf("已创建链表！");
-				Sleep(2000);
-			}
-			break;
-		case 2:
-			printData(head);          //遍历链表打印出数据
-			printf("（回车返回）");
-			getchar();
-			break;
-		case 3:
-			system("cls");
-			head = addData(head);     //插入数据
-			break;
-		case 4:
-			seekData(head);
-			printf("（回车返回）");
-			getchar();
-			break;
-		case 5:
-			head = deleteNode(head);
-			break;
-		case 6:
-			destroyList(head);
-			break;
-		case 7:
-		case 8:
-			judgeLoop(head);
-			printf("（回车返回）");
-			getchar();
-			break;
-		case 9:
-			paritySwap(head);
-			break;
-		case 10:
-		case 11:
-			system("cls");
-			printf("Hava a nice day!\n");
-			return 0;
-		default:
-			printf("输入指令有误，请重新输入！");
-		}
-	}
-	return 0;
-}
+//int main() {
+//	LinckedList head = NULL;
+//	int command1;//1.控制链表指令；2.控制插入指令
+//	for (;;) {
+//		system("cls");
+//		displayMenu(13);
+//		printf("请输入指令（1-11）：\n");
+//		scanf("%d", &command1);
+//		getchar();
+//		switch (command1) {
+//		case 1:
+//			if (head == NULL)head = createEmptyList();//创建空链表
+//			else {
+//				printf("已创建链表！");
+//				Sleep(2000);
+//			}
+//			break;
+//		case 2:
+//			printData(head);          //遍历链表打印出数据
+//			printf("（回车返回）");
+//			getchar();
+//			break;
+//		case 3:
+//			system("cls");
+//			head = addData(head);     //插入数据
+//			break;
+//		case 4:
+//			seekData(head);
+//			printf("（回车返回）");
+//			getchar();
+//			break;
+//		case 5:
+//			head = deleteNode(head);
+//			break;
+//		case 6:
+//			destroyList(head);
+//			break;
+//		case 7:
+//		case 8:
+//			judgeLoop(head);
+//			printf("（回车返回）");
+//			getchar();
+//			break;
+//		case 9:
+//			paritySwap(head);
+//			break;
+//		case 10:
+//		case 11:
+//			system("cls");
+//			printf("Hava a nice day!\n");
+//			return 0;
+//		default:
+//			printf("输入指令有误，请重新输入！");
+//		}
+//	}
+//	return 0;
+//}
