@@ -1,5 +1,5 @@
 #ifndef Menu
-#define Menu
+#define MENU
 
 char menu[10][50] = {
 "======[Menu]======",
@@ -9,8 +9,8 @@ char menu[10][50] = {
 "=================="
 };
 
-char singleLinckedListMenu[50][50] = {
-"======[Menu of single linked list]======",
+char singleLinckedListMenu[20][50] = {
+"======[Menu of Single Linked List]======",
 "[1]-创建空链表.",
 "[2]-遍历数据.",
 "[3]-插入结点.",
@@ -19,29 +19,25 @@ char singleLinckedListMenu[50][50] = {
 "[6]-销毁链表.",
 "[7]-反转链表.",
 "[8]-判断链表是否成环.",
-"[9]-链表奇偶对换",
-"[10]-查找中间结点",
+"[9]-链表奇偶对换.",
+"[10]-查找中间结点.",
 "[11]-退出.",
 "========================================"
 };
 
-char doublieLickedListMenu[50][50] = {
-"======[Menu of single linked list]======",
+char doublieLickedListMenu[10][50] = {
+"======[Menu of Double Linked List]======",
 "[1]-创建空链表.",
 "[2]-遍历数据.",
 "[3]-插入结点.",
 "[4]-查找数据.",
 "[5]-删除数据.",
 "[6]-销毁链表.",
-"[7]-反转链表.",
-"[8]-判断链表是否成环.",
-"[9]-链表奇偶对换",
-"[10]-查找中间结点",
-"[11]-退出.",
+"[7]-退出.",
 "========================================"
 };
 
-char insertMenu[50][50] = {
+char insertMenu[10][50] = {
 "==========[Menu of inserting ways]==========",
 "[1]-头插法.",
 "[2]-尾插法.",
