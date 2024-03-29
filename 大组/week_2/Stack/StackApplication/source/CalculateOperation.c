@@ -43,9 +43,10 @@ char* TransInfixToSuffix(char* data) {
 			}
 			else if (data[i] == ')') {
 				if (data[i - 1] == '(') {
-					printf("算式错误！");
+					//printf("算式错误！");
 					return NULL;
 				}
+				else if (i == 0)return NULL;
 				while (IsEmptyStack(s) == 0) {    //判空
 					if (GetTopStack(s) == '(') {
 						PopStack(s);//输入了右括号时，要遇到左括号才break
@@ -79,6 +80,7 @@ char* TransInfixToSuffix(char* data) {
 	while (IsEmptyStack(s) == 0) {
 		sufdata[j++] = *((char*)GetTopStack(s));
 		PopStack(s);
+		sufdata[j++] = ' ';
 	}
 	return sufdata;
 }
@@ -92,7 +94,7 @@ double CalculateSuffix() {
 	printf("请输入正确的表达式：\n");
 	gets(sufdata);
 	char* c = TransInfixToSuffix(sufdata);
-	if (c == NULL) {
+	if (c == NULL || strlen(sufdata) == 0) {
 		printf("算式错误！");
 		return 0.0;
 	}
@@ -175,6 +177,5 @@ double CalculateSuffix() {
 			i++;
 		}
 	}
-	double d = *(double*)GetTopStack(s);
-	return d;
+	return  *(double*)GetTopStack(s);
 }
