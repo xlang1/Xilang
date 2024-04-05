@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <script src="js/vue.js"></script>
+    <h2>添加菜式</h2>
+    <form action="" method="post">
+        <input id="id" v-model="dish.id" name="id" type="hidden">
+        菜品名称：<input id="name" v-model="dish.name" name="name"><br>
+        设置价格：<input id="price" v-model="dish.price" name="price"><br>
+        描述信息（50字内）：<textarea rows="5" cols="20" maxlength="50" id="describe" v-model="dish.describe"
+                                   name="describe"></textarea><br>
+        <input type="button" id="btn" @click="submit" value="提交">
+
+    </form>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                dish: {}
+            }
+        },
+        methods: {
+            submit() {
+                var _this = this;
+                //1.创建核心对象
+                // 创建 XMLHttpRequest 对象
+                var xhttp = new XMLHttpRequest();
+                _this.dish = JSON.stringify(_this.dish);
+                alert(_this.dish);
+                //2.发送请求
+                //  请求方式(增删改一般post)     服务器位置(全路径较好，便于以后分离前后端)              异步（false同步，默认时true，不写也可以）
+                xhttp.open("POST", "http://localhost:8080/AJAX_JSON_Demo-week3/addDishServlet", true);
+                xhttp.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+                xhttp.send(_this.dish);
+
+                //3.获取响应
+                //onreadystatechange:定义了当 readyState 属性发生改变时所调用的函数
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        //添加成功后,转到menu
+                        if (this.responseText == "success") {
+                            location.href = "http://localhost:8080/AJAX_JSON_Demo-week3/menu.html";
+                        }
+                    }
+                }
+            }
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
