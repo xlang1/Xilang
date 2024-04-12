@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<div class="form-div">
+    <div class="reg-content">
+        <h1>欢迎注册！</h1>
+        <span>已有账号！</span><a href="login.html">点击登录</a>
+    </div>
+<!--                                                                                 解决乱码问题为get类型-->
+    <form id="reg-form" action="/Login_Register_Demo-week4/registerServlet" method="get">
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td class="inputs">
+                    <input name="username" type="text" id="username">
+                    <br>
+<!--                    <span id="username_err" class="err_msg">用户名重复！</span>-->
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td class="inputs">
+                    <input name="password" type="password" id="password">
+                    <br>
+<!--                    <span id="password_err" class="err_msg">密码格式有误！</span>-->
+                </td>
+            </tr>
+        </table>
+        <div class="button">
+            <input value="注册" type="submit" id="reg_btn">
+        </div>
+        <br class="clear">
+    </form>
+</div>
+</body>
+</html>
